@@ -42,6 +42,8 @@ Os maiores benefícios do uso dessa ferramenta é poder controlar ambientes comp
 
 Navegue até o site oficial do Terraform e clique no link da página de [download](https://www.terraform.io/downloads.html). Feito isto, selecione a opção de download específica para o sistema operacional Windows.
 
+
+
 Ao clicar na opção de arquitetura x64 do Windows o download da CLI será iniciado.
 
 Navegue até o diretório padrão de downloads do seu sistema operacional e localize o arquivo recém baixado. Por padrão o arquivo estará disponível na versão **.zip** com a seguinte nomenclatura: 
