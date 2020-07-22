@@ -170,6 +170,7 @@ commands will detect it and remind you to do so if necessary.
 
 
 **Passo 02: Criando um par de chaves para acesso SSH EC2**
+
 Após criarmos o ambiente na AWS será possível acessar o sistema operacional Linux instalado na instância EC2. 
 
 Para criarmos o chave é possível utilizar o software [**PuTTY Key Generator**](PuTTY%20Key%20Generator), para criar as nossa chave de acesso pública e privada.
