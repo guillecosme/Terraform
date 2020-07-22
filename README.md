@@ -1,6 +1,3 @@
-# Terraform
-Repositório utilizado para fornecer um pequeno passo a passo sobre a CLI do Terraform e o provisionamento de ambiente na Amazon Web Services
-
 # Trabalhando com Terraform e a Amazon Web Services (AWS)
 
 ## Visão Geral
@@ -40,9 +37,11 @@ Os maiores benefícios do uso dessa ferramenta é poder controlar ambientes comp
 ## Download e  Configuração do Terraform
 **Passo 01: Realizando o download da CLI do Terraform** 
 
-Navegue até o site oficial do Terraform e clique no link da página de [download](https://www.terraform.io/downloads.html). Feito isto, selecione a opção de download específica para o sistema operacional Windows.
+Navegue até o site oficial do Terraform e clique no link da página de [download](https://www.terraform.io/downloads.html).
 
+![Página Oficial de Download do Terraform](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/download-terraform-site.PNG)
 
+Feito isto, selecione a opção de download específica para o sistema operacional Windows.
 
 Ao clicar na opção de arquitetura x64 do Windows o download da CLI será iniciado.
 
@@ -95,3 +94,6 @@ Caso os passos anteriores tenham sido seguidos corretamente o resultado esperado
 **Visão Geral**
 
 Nesta etapa iremos efetivamente construir o nosso script Terraform para provisionar um ambiente simples de Infraestrutura na AWS. Neste tutorial utilizei o [Visual Code](https://code.visualstudio.com/) com a [extensão oficial do Terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform) como minha IDE principal, mas fiquem a vontade para utilizar o ambiente de desenvolvimento de sua preferência.
+
+
+
