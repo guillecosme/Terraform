@@ -145,7 +145,29 @@ No Visual Code insira os trecho de código abaixo alterando com os dados necess�
 
    
 
+    provider  "aws" {
+	   region =  "sa-east-1"
+	   access_key =  "Insira a suchave de acesso aqui"
+	   secret_key =  "Insira a sua senha de Acesso aqui"
+	}	   
+
+
 **Observação:** Nunca compartilhe ou faça upload de trechos de códigos contendo a sua AccessKey e SecretAccessKey da AWS, isto poderá de gerar custos altíssimos se estes dados forem utilizados por terceiros*
+
+Na terminal do próprio Visual Code digite o seguinte comando e pressione ENTER para inicializar a o script Terraform na pasta: **myFirstTerraformEnvironment**
+
+    terraform init
+
+O resultado que esperamos é algo parecido  com isto:
+
+> Terraform has been successfully initialized!
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+
 
 **Passo 02: Criando um par de chaves para acesso SSH EC2**
 Após criarmos o ambiente na AWS será possível acessar o sistema operacional Linux instalado na instância EC2. 
@@ -159,4 +181,17 @@ Movimente o mouse de maneira aleatória para gerar a chave pública com os algor
 
 Agora, através do Visual Code, será necessário criar o seguinte script
 
-    enter code here
+    # Criando Variáveis para armazenar o path da chave pública de acesso às instâncias EC2
+    variable ec2_public_key {
+	    default =  "Caminho_da_chave_publica/chave.pub")
+    }
+
+O próximo passo é utilizar a chave pública para instanciar a criar um chave de acesso EC2 na console da AWS através do Terraform. Utilize o seguinte trecho de código:
+
+   resource  "aws_key_pair"  "myFirstTerraformEnvironment-key" {			 																   key_name =  "myFirstTerraformEnvironment-key"
+	public_key =  file(var.ec2_public_key)
+	tags =  {
+		nome = "myFirstTerraformEnvironment-key"
+		objetivo = "Laboraório-Terraform"
+		}
+	}
