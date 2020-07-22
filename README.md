@@ -114,5 +114,24 @@ Caso os passos anteriores tenham sido seguidos corretamente o resultado esperado
 
 Nesta etapa iremos efetivamente construir o nosso script Terraform para provisionar um ambiente simples de Infraestrutura na AWS. Neste tutorial utilizei o [Visual Code](https://code.visualstudio.com/) com a [extensão oficial do Terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform) como minha IDE principal, mas fiquem a vontade para utilizar o ambiente de desenvolvimento de sua preferência.
 
+**Passo 01: Criando a pasta do seu primeiro projeto**
 
+Para armazenar o código que será desenvolvido crie uma uma pasta no diretório de sua preferência. Para este tutorial criarei o diretório chamado: **myFirstTerraformEnvironment**
 
+**Passo 02: Iniciando o seu projeto através da IDE**
+
+Conforme mencionado anteriormente irei utilizar o [Visual Code](https://code.visualstudio.com/) para este tutorial. Abra o VSCode  e navegue até as opções abaixo:
+
+    File>Open Folder
+
+Através do Explorer do Windows selecione a nova pasta criada no passo anterior.
+
+No menu da nova pasta criada, dentro do Visual Code, selecione a opção:
+
+    + New File
+  
+  ![Adicionando um novo Arquivo](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/vsCode-NewFile.PNG)
+
+Após adicionar o novo arquivo nomeie o mesmo com a extensão .tf, a extensão oficial de scripts terraform:
+
+![Extensão .tf](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/vsCode-NewFile-1.PNG)
