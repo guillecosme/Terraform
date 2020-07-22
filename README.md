@@ -144,11 +144,15 @@ Feito isto já será possível construir o script Terraform.
 No Visual Code insira os trecho de código abaixo alterando com os dados necessários de sua conta da AWS:
 
     ~~~~terraform
-    provider  "aws" {
-	    region =  "sa-east-1"
-		access_key =  "AKIA2CU42UIWZ5DPTOPJ"
-		secret_key =  "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"
-	}
+    # Selecionando o provide <AWS> e passando o usuário e senha do IAM
+
+provider  "aws" {
+    region = "sa-east-1"
+    access_key = "AKIA2CU42UIWZ5DPTOPJ"
+    secret_key = "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"
+}
+~~~~
+
 
 
 **Observação:** Nunca compartilhe ou faça upload de trechos de códigos contendo a sua AccessKey e SecretAccessKey da AWS, isto poderá de gerar custos altíssimos se estes dados forem utilizados por terceiros*
