@@ -198,3 +198,69 @@ O próximo passo é utilizar a chave pública para instanciar a criar um chave d
     		objetivo = "Laboraório-Terraform"
     		}
     	}
+  
+  **Passo 03: Criando Grupo de Segurança para a instância EC2**
+
+Para que a instância esteja segura iremos criar dois grupos de segurança, um para regras de firewall Inbound e outro para regras Outbound. Liberando os seguintes portocolos TCP:
+
+ - **Inbound**
+		 - SSH 	(Porta 22)
+		 - HTTP 	(Porta 80)
+ - **Outbound**
+		 - HTTPS(Porta 443)
+		 - HTTP (Porta 80)
+
+Os grupos de segurança são importantes para o controle de tráfego de acessos da sua instância EC2, por padrão ao criar uma nova instância um grupo default será aplicado, este grupo está totalmente aberto à Internet, portanto configure os dois grupos através dos trechos de código abaixo:
+
+**Inbound**
+**Grupo: SG-Web-Server-SSH-HTTP-Allow-Inbound**
+
+    resource  "security_group"  "SG-Web-Server-SSH-HTTP-Allow-Inbound" {
+		name =  "SG-Web-Server-SSH-HTTP-Allow-Inbound"
+        description =  "Grupo de segurança que libera os 
+        rotocolos SSH e HTTP, Inbound"
+        ingress {
+	        description =  "Libera SSH"
+	        protocol =  "tcp"
+	        from_port =  "22"
+	        to_port =  "22"
+        c	idr_blocks =  ["0.0.0.0/0"]
+        }
+        ingress {
+	        description =  "Libera HTTP"
+	        protocol =  "tcp"
+	        from_port =  "80"
+	        to_port =  "80"
+	        cidr_blocks =  ["0.0.0.0/0"]
+        }
+        tags =  {
+	        nome = "SG-Web-Server-SSH-HTTP-Allow-Inbound"
+	        objetivo = "Laboraório-Terraform"
+        }
+    }
+
+**Outbound**
+**Grupo: SG-Web-Server-HTTPS-HTTP-Allow-Outbound**
+
+    resource  "security_group"  "SG-Web-Server-HTTPS-HTTP-Allow-Outbound" {
+	    name =  "SG-Web-Server-HTTPS-HTTP-Allow-Outbound"
+	    description =  "Grupo de segurança que libera os protocolos SSH e HTTP, Outbound"
+	    egress {
+		    description =  "Libera HTTP"
+		    protocol =  "tcp"
+		    from_port =  "80"
+		    to_port =  "80"
+		    cidr_blocks =  ["0.0.0.0/0"]
+	    }
+	    egress {
+		    description =  "Libera HTTPS"
+		    protocol =  "tcp"
+		    from_port =  "443"
+		    to_port =  "443"
+		    cidr_blocks =  ["0.0.0.0/0"]
+	    }
+	    tags =  {
+		    nome = "SG-Web-Server-HTTPS-HTTP-Allow-Outbound"
+		    objetivo = "Laboraório-Terraform"
+	    }
+    }
