@@ -51,7 +51,7 @@ Navegue até o diretório padrão de downloads do seu sistema operacional e loca
 
 > **terraform_"Versão da CLI"_windows_amd64.zip**
 
-![Arquivo recém baixado](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/download-terraform-windowsx64.PNG)
+![Terraform File](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/download-terraform-zipFile.PNG)
 
 Crie um novo diretório chamado **Terraform** no seguinte caminho:
 
