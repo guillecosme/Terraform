@@ -135,3 +135,34 @@ No menu da nova pasta criada, dentro do Visual Code, selecione a opção:
 Após adicionar o novo arquivo nomeie o mesmo com a extensão .tf, a extensão oficial de scripts terraform:
 
 ![Extensão .tf](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/vsCode-NewFile-1.PNG)
+
+Feito isto já será possível construir o script Terraform.
+
+## Cosntruindo o ambiente na AWS
+**Passo 01: Inserindo as credencias da AWS no Terraform**
+
+No Visual Code insira os trecho de código abaixo alterando com os dados necessários de sua conta da AWS:
+
+    ~~~~terraform
+    provider  "aws" {
+	    region =  "sa-east-1"
+		access_key =  "AKIA2CU42UIWZ5DPTOPJ"
+		secret_key =  "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"
+	}
+
+
+**Observação:** Nunca compartilhe ou faça upload de trechos de códigos contendo a sua AccessKey e SecretAccessKey da AWS, isto poderá de gerar custos altíssimos se estes dados forem utilizados por terceiros*
+
+**Passo 02: Criando um par de chaves para acesso SSH EC2**
+Após criarmos o ambiente na AWS será possível acessar o sistema operacional Linux instalado na instância EC2. 
+
+Para criarmos o chave é possível utilizar o software [**PuTTY Key Generator**](PuTTY%20Key%20Generator), para criar as nossa chave de acesso pública e privada.
+
+Abra o PuTTY Gen e clique na opção:
+
+    Generate
+Movimente o mouse de maneira aleatória para gerar a chave pública com os algorítimos de criptografia disponíveis pelo software. Salve a chave pública (.pub) e a chave privada (.ppk) em um diretório seguro (Importante: nunca compartilhe a sua chave privada).
+
+Agora, através do Visual Code, será necessário criar o seguinte script
+
+    enter code here
