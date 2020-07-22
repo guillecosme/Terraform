@@ -43,11 +43,15 @@ Navegue até o site oficial do Terraform e clique no link da página de [downloa
 
 Feito isto, selecione a opção de download específica para o sistema operacional Windows.
 
+![Opção de Download para Windows](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/download-terraform-windowsx64.PNG)
+
 Ao clicar na opção de arquitetura x64 do Windows o download da CLI será iniciado.
 
 Navegue até o diretório padrão de downloads do seu sistema operacional e localize o arquivo recém baixado. Por padrão o arquivo estará disponível na versão **.zip** com a seguinte nomenclatura: 
 
 > **terraform_"Versão da CLI"_windows_amd64.zip**
+
+![Arquivo recém baixado](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/download-terraform-windowsx64.PNG)
 
 Crie um novo diretório chamado **Terraform** no seguinte caminho:
 
@@ -57,7 +61,15 @@ E nova pasta deverá estar disponível assim:
 
 > C:\Terraform
 
-Feito isto extraia o conteúdo da que você recentemente baixou e cole no novo diretório.
+![Novo Diretório Terraform](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/terraform-folder.PNG)
+
+Feito isto extraia o conteúdo da que você recentemente diretamente na no novo diretório criado:
+
+![Extraindo a CLI do Terraform](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/terraform-extract-folder-1.PNG)
+
+![Extraindo a CLI do Terraform](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/terraform-extract-folder-2.PNG)
+
+![Extraindo a CLI do Terraform](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/terraform-extract-folder-3.PNG)
 
 **Passo 02: Configurando o Terraform no Windows 10**
 
@@ -67,16 +79,23 @@ Para configurar a CLI recém baixada abra o Prompt de Comando do Windows 10 e di
 
 Será exibida uma nova tela (**Propriedades Avançadas do Sistema**), ao final da tela clique na opção: **Variáveis de Ambiente**
 
+![Propriedades Avançadas](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/SystemPropertiesAdvanced-1.PNG)
+
 Na próxima tela (**Variáveis de Ambiente**) observe o primeiro quadrante exibido e clique sob a variável: **Path** e posteriormente clique no botão editar.
 
-Uma nova janela será aberta com alguns itens listados clique no botão: **Novo**, localizado ao lado esquerdo superior. Feito isso você poderá incluir uma nova variável de ambiente
+![Propriedades Avançadas](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/SystemPropertiesAdvanced-2.PNG)
 
-Clique no botão **Procurar** e navegue até o diretório recentemente criado:
+Uma nova janela será aberta com alguns itens listados clique no botão: **Novo**, localizado ao lado esquerdo superior. Feito isso você poderá incluir uma nova variável de ambiente:
+
+![Propriedades Avançadas](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/SystemPropertiesAdvanced-3.PNG)
+
+Na nova linha digite o caminho do novo diretório
 
 > C:\Terraform
 
+![Propriedade Avançadas](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/SystemPropertiesAdvanced-4.PNG)
 
-Após concluir estas etapas o Terraform estará configurado e você poderá realizar o teste do CLI.
+Após concluir estas etapas clique em OK para confirmar as alterações e o Terraform estará configurado e  você poderá realizar o teste do CLI.
 
 **Passo 03: Testando a CLI do Terraform**
 
