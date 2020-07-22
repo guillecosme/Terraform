@@ -188,10 +188,12 @@ Agora, através do Visual Code, será necessário criar o seguinte script
 
 O próximo passo é utilizar a chave pública para instanciar a criar um chave de acesso EC2 na console da AWS através do Terraform. Utilize o seguinte trecho de código:
 
-   resource  "aws_key_pair"  "myFirstTerraformEnvironment-key" {			 																   key_name =  "myFirstTerraformEnvironment-key"
-	public_key =  file(var.ec2_public_key)
-	tags =  {
-		nome = "myFirstTerraformEnvironment-key"
-		objetivo = "Laboraório-Terraform"
-		}
-	}
+  
+
+     resource  "aws_key_pair"  "myFirstTerraformEnvironment-key" {			 																   key_name =  "myFirstTerraformEnvironment-key"
+    	public_key =  file(var.ec2_public_key)
+    	tags =  {
+    		nome = "myFirstTerraformEnvironment-key"
+    		objetivo = "Laboraório-Terraform"
+    		}
+    	}
