@@ -292,15 +292,31 @@ Para criar o bucket e realizar o upload dos arquivos da página web, utilize o s
 
 **Realizando o Upload da página Index.html**
 
-    resource  "aws_s3_bucket_object"  "myfirsts3object" {
-	    bucket =  "myfirstterraformenvironment"
+    
+    resource  "aws_s3_bucket_object"  "object-01" {
+		bucket =  aws_s3_bucket.bucket.bucket
 		key =  "index.html"
-		source =  "Path da sua página Index"
+		source =  "Digite o path da sua pasta aqui"
 		tags =  {
-			nome = "myfirsts3object"
-			objetivo = "Laboraório-Terraform"
+			name = "myfirsts3object"
+			objetivo = "Laboratório-Terraform"
 		}
 	}
+
+****Realizando o Upload da pasta assets.zip****
+
+```
+resource  "aws_s3_bucket_object"  "object-02" {
+	bucket =  aws_s3_bucket.bucket.bucket
+	key =  "assets.zip"
+	source =  "Digite o path da sua pasta aqui"
+	tags =  {
+		name = "myfirsts3object"
+		objetivo = "Laboratório-Terraform"
+	}
+}
+````
+
 
 
 **Passo 05: Criando a instância EC2**
@@ -435,14 +451,6 @@ Execute:
 
     yes    
   Ao final deste tutorial  você terá realizado o deploy de um simples Web Server na nuvem com a seguinte arquitetura:
-
-
-
-
-
-
-
-
 
 
  
