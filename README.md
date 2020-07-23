@@ -22,11 +22,15 @@ Este tutorial tem o objetivo de demonstrar o funcionamento básico da ferramenta
  - **CLI da Terraform instalado**, versão igual ou superior à (0.12.28).
  
 			 - Download disponível em : https://www.terraform.io/downloads.html
- - **Putty PuTTY**  (Release 0.73 Build platform: 64-bit x86 Windows)
+ - **PuTTY**  (Release 0.73 Build platform: 64-bit x86 Windows)
 	
 			 - Download disponível em: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 			 
  - **Conta na console da Amazon Web Services**
+ - **Usuário [IAM (Identity Access Management)](https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/id_roles.html)** com os seguintes roles associadas a ele:
+	 - [AmazonS3FullAccess](https://console.aws.amazon.com/iam/home?region=sa-east-1#policies/arn:aws:iam::aws:policy/AmazonS3FullAccess)
+	 - [AmazonEC2FullAccess](https://console.aws.amazon.com/iam/home?region=sa-east-1#policies/arn:aws:iam::aws:policy/AmazonEC2FullAccess)
+
  
 # Introdução
 
@@ -138,7 +142,7 @@ Após adicionar o novo arquivo nomeie o mesmo com a extensão .tf, a extensão o
 
 Feito isto já será possível construir o script Terraform.
 
-## Cosntruindo o ambiente na AWS
+## Construindo o ambiente na AWS
 **Passo 01: Inserindo as credencias da AWS no Terraform**
 
 No Visual Code insira os trecho de código abaixo alterando com os dados necessários de sua conta da AWS:
@@ -215,9 +219,9 @@ Os grupos de segurança são importantes para o controle de tráfego de acessos 
 **Inbound**
 **Grupo: SG-Web-Server-SSH-HTTP-Allow-Inbound**
 
-    resource  "security_group"  "SG-Web-Server-SSH-HTTP-Allow-Inbound" {
+    resource  "aws_security_group"  "SG-Web-Server-SSH-HTTP-Allow-Inbound" {
 		name =  "SG-Web-Server-SSH-HTTP-Allow-Inbound"
-        description =  "Grupo de segurança que libera os 
+        description =  "Grupo de seguranca que libera os 
         rotocolos SSH e HTTP, Inbound"
         ingress {
 	        description =  "Libera SSH"
@@ -242,9 +246,9 @@ Os grupos de segurança são importantes para o controle de tráfego de acessos 
 **Outbound**
 **Grupo: SG-Web-Server-HTTPS-HTTP-Allow-Outbound**
 
-    resource  "security_group"  "SG-Web-Server-HTTPS-HTTP-Allow-Outbound" {
+    resource  "aws_security_group"  "SG-Web-Server-HTTPS-HTTP-Allow-Outbound" {
 	    name =  "SG-Web-Server-HTTPS-HTTP-Allow-Outbound"
-	    description =  "Grupo de segurança que libera os protocolos SSH e HTTP, Outbound"
+	    description =  "Grupo de seguranca que libera os protocolos SSH e HTTP, Outbound"
 	    egress {
 		    description =  "Libera HTTP"
 		    protocol =  "tcp"
@@ -264,3 +268,21 @@ Os grupos de segurança são importantes para o controle de tráfego de acessos 
 		    objetivo = "Laboraório-Terraform"
 	    }
     }
+
+**Passo 03: Criando um Bucket S3 e realizando Upload de arquivos**
+
+No ambiente a ser provisionando iremos criar um Web-Server que irá ser o host de uma página web estática, esta página web será armazenada primeiramente num Bucket S3. 
+
+Para criar o bucket e realizar o upload dos arquivos da página web, utilize o seguinte trecho de código:
+
+    resource  "aws_s3_bucket"  "myfirstterraformenvironment" {
+	    bucket =  "myfirstterraformenvironment"
+	    acl =  "private"
+	    versioning {
+		    enabled =  true
+	    }
+	    tags =  {
+		    nome = "myfirstterraformenvironment"
+		    objetivo = "Laboraório-Terraform"
+		}
+	}
