@@ -279,7 +279,7 @@ Para criar o bucket e realizar o upload dos arquivos da página web, utilize o s
 	    bucket =  "myfirstterraformenvironment"
 	    acl =  "private"
 	    versioning {
-		    enabled =  true
+		    enabled =  false
 	    }
 	    tags =  {
 		    nome = "myfirstterraformenvironment"
