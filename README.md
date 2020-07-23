@@ -9,6 +9,10 @@ Este tutorial tem o objetivo de demonstrar o funcionamento básico da ferramenta
  - Amazon EC2 Instance
  - Amazon S3 Bucket
 
+A arquitetura prevista será esta:
+
+![Arquitetura AWS-Terraform](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/ProvisionamentoTerraform.png)
+
 **Links para Documentação**
 
  - [Terraform](https://www.terraform.io/docs/index.html)
@@ -453,6 +457,7 @@ Execute:
   Ao final deste tutorial  você terá realizado o deploy de um simples Web Server na nuvem com a seguinte arquitetura:
 
 ![Arquitetura AWS-Terraform](https://github.com/guillecosme/Terraform/blob/master/terraform-step-by-step-images/ProvisionamentoTerraform.png)
+
 
 
 
