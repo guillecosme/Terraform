@@ -275,6 +275,8 @@ No ambiente a ser provisionando iremos criar um Web-Server que irá ser o host d
 
 Para criar o bucket e realizar o upload dos arquivos da página web, utilize o seguinte trecho de código:
 
+**Criando o Bucket**
+
     resource  "aws_s3_bucket"  "myfirstterraformenvironment" {
 	    bucket =  "myfirstterraformenvironment"
 	    acl =  "private"
@@ -284,5 +286,17 @@ Para criar o bucket e realizar o upload dos arquivos da página web, utilize o s
 	    tags =  {
 		    nome = "myfirstterraformenvironment"
 		    objetivo = "Laboraório-Terraform"
+		}
+	}
+
+**Realizando o Upload da página Index.html**
+
+    resource  "aws_s3_bucket_object"  "myfirsts3object" {
+	    bucket =  "myfirstterraformenvironment"
+		key =  "index.html"
+		source =  "Path da sua página Index"
+		tags =  {
+			nome = "myfirsts3object"
+			objetivo = "Laboraório-Terraform"
 		}
 	}
