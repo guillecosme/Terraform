@@ -30,6 +30,7 @@ Este tutorial tem o objetivo de demonstrar o funcionamento básico da ferramenta
  - **Usuário [IAM (Identity Access Management)](https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/id_roles.html)** com os seguintes roles associadas a ele:
 	 - [AmazonS3FullAccess](https://console.aws.amazon.com/iam/home?region=sa-east-1#policies/arn:aws:iam::aws:policy/AmazonS3FullAccess)
 	 - [AmazonEC2FullAccess](https://console.aws.amazon.com/iam/home?region=sa-east-1#policies/arn:aws:iam::aws:policy/AmazonEC2FullAccess)
+	 - [IAMFullAccess](https://console.aws.amazon.com/iam/home?region=sa-east-1#/policies/arn%3Aaws%3Aiam%3A%3Aaws%3Apolicy%2FIAMFullAccess)
 
  
 # Introdução
@@ -269,7 +270,7 @@ Os grupos de segurança são importantes para o controle de tráfego de acessos 
 	    }
     }
 
-**Passo 03: Criando um Bucket S3 e realizando Upload de arquivos**
+**Passo 04: Criando um Bucket S3 e realizando Upload de arquivos**
 
 No ambiente a ser provisionando iremos criar um Web-Server que irá ser o host de uma página web estática, esta página web será armazenada primeiramente num Bucket S3. 
 
@@ -300,3 +301,27 @@ Para criar o bucket e realizar o upload dos arquivos da página web, utilize o s
 			objetivo = "Laboraório-Terraform"
 		}
 	}
+
+
+**Passo 05: Criando a instância EC2**
+
+Após seguir os passos anteriores precisamos criar o servidor Web que irá hospedar a nossa página index.html armazenada no bucket S3. Insira o trecho de código abaixo ao seu script do terraform para poder realizar a criação da instância e associação ao dois grupos de seguranças criados previamente.
+
+O trecho do código também contém um bash script para que a instância realize as seguintes etapas:
+
+ - Atualização da AMI (Amazon Machine Image)
+ - Instalação do serviço web server [Apache](https://httpd.apache.org/)
+ - Download da página index.html do nosso Bucket S3
+
+**Observação:** O ID da Amazon Machine Image é alterado de região para região, o trecho de código abaixo utiliza a AMI da América do Sul [(sa-east-1)](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/using-regions-availability-zones.html) - **[Amazon Linux 2 AMI (HVM), SSD Volume Type](https://aws.amazon.com/marketplace/pp/Amazon-Web-Services-Amazon-Linux-AMI-HVM-64-bit/B00CIYTQTC)**
+
+Pra prosseguir com o processo utilize o seguinte trecho de código:
+
+
+
+
+
+
+ 
+
+
